@@ -1,0 +1,4 @@
+(executable
+ (public_name minimal_caml)
+ (name main)
+ (libraries minimal_caml))

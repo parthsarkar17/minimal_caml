@@ -1,0 +1,3 @@
+(library
+ (name minimal_caml)
+ (libraries base cohttp-async yojson http))
