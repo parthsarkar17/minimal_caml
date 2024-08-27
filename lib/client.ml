@@ -40,7 +40,7 @@ module Mission (Socket : SOCKET) = struct
   the URL from which to fetch the image, along with ID information. *)
   let fetch_work () : Image.metadata Async.Deferred.t =
     let uri = Socket.work_endp |> url_of_targets |> Uri.of_string in
-    let rec query_for_work () =
+    let rec query_for_work () : string Async.Deferred.t =
       Async.try_with (fun () ->
           Cohttp_async.Client.post ?headers:Socket.client_id uri)
       >>= fun result ->
